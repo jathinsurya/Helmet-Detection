@@ -2,9 +2,9 @@ from flask import Flask, render_template, request
 import os
 from model import predict_image
 
-app = Flask(__name__, template_folder="../templates", static_folder="../static")
+app = Flask(__name__)
 
-UPLOAD_FOLDER = "../static/uploads/"
+UPLOAD_FOLDER = "static/uploads/"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route("/", methods=["GET","POST"])
@@ -25,4 +25,4 @@ def home():
     return render_template("index.html", result=result, img=img_path)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
