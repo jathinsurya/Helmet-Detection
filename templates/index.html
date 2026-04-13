@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Helmet Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Helmet Detection System</h1>
+            <p class="subtitle">Advanced AI-powered Safety Detection</p>
+        </div>
+
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            <div class="file-input-wrapper">
+                <input type="file" name="image" id="image-input" accept="image/*" required>
+                <label for="image-input" class="file-label">
+                    <span class="upload-icon">📸</span>
+                    <span>Choose an image or drag & drop</span>
+                </label>
+            </div>
+            <button type="submit" class="detect-btn">🔍 Detect Helmet</button>
+        </form>
+
+        {% if result %}
+            <div class="result-section">
+                <div class="result {% if 'Helmet ✅' in result %}success{% else %}danger{% endif %}">
+                    {{ result }}
+                </div>
+                <div class="image-container">
+                    <img src="{{ img }}" alt="Uploaded image for detection">
+                </div>
+            </div>
+        {% else %}
+            <div class="placeholder">
+                <p>Upload an image to detect if a helmet is present</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
