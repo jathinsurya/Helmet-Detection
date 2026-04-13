@@ -18,10 +18,14 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Model and Data (optional - comment out to include)
-# models/
-# dataset/
-# static/uploads/
+# Large Model Files (comment out to include)
+*.h5
+*.pkl
+*.joblib
+
+# Datasets
+dataset/
+static/uploads/
 
 # Flask
 instance/
@@ -29,3 +33,4 @@ instance/
 
 # Dependencies
 .env
+
