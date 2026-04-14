@@ -65,17 +65,18 @@ This project is a full-stack Computer Vision application that detects whether a 
 
 ---
 
-## 📁 Project Structure
+📁 Project Structure
+
 helmet-detection-web/
 │
-├── dataset/
-├── training/
-├── evaluation/
-├── app/
-├── static/
-├── templates/
-├── models/
-└── README.md
+├── dataset/        # Dataset files (images, annotations)
+├── training/       # Model training scripts and configs
+├── evaluation/     # Evaluation and testing scripts
+├── app/            # Main application logic
+├── static/         # Static assets (CSS, JS, images)
+├── templates/      # HTML templates
+├── models/         # Trained models / weights
+└── README.md       # Project documentation
 
 ---
 
