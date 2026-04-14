@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import os
-from model import predict_image
+from .model import predict_image
 
 app = Flask(__name__)
 
