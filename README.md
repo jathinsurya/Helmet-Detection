@@ -64,7 +64,7 @@ This project is a full-stack Computer Vision application that detects whether a 
 - End-to-end ML pipeline (data → training → evaluation → deployment)
 
 ---
-
+```
 📁 Project Structure
 
 helmet-detection-web/
@@ -77,6 +77,7 @@ helmet-detection-web/
 ├── templates/      # HTML templates
 ├── models/         # Trained models / weights
 └── README.md       # Project documentation
+```
 
 ---
 
