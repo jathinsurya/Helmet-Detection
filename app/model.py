@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-model = tf.keras.models.load_model("../models/helmet_model.h5")
+model = tf.keras.models.load_model("models/helmet_model.h5")
 
 def predict_image(path):
     img = Image.open(path).convert("RGB").resize((150,150))

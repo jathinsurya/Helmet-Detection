@@ -1,10 +1,15 @@
 from flask import Flask, render_template, request
 import os
-from .model import predict_image
+from app.model import predict_image
 
-app = Flask(__name__)
+# Get project root directory
+basedir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-UPLOAD_FOLDER = "static/uploads/"
+app = Flask(__name__, 
+            template_folder=os.path.join(basedir, 'templates'), 
+            static_folder=os.path.join(basedir, 'static'))
+
+UPLOAD_FOLDER = os.path.join(basedir, "static/uploads/")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route("/", methods=["GET","POST"])
@@ -20,7 +25,7 @@ def home():
             file.save(path)
 
             result = predict_image(path)
-            img_path = path
+            img_path = f"/static/uploads/{file.filename}"
 
     return render_template("index.html", result=result, img=img_path)
 
