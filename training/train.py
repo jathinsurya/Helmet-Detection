@@ -5,7 +5,7 @@ from tensorflow.keras import layers, models
 IMG_SIZE = (150,150)
 BATCH_SIZE = 32
 
-# 🔥 Data Augmentation (VERY IMPORTANT)
+
 train_datagen = ImageDataGenerator(
     rescale=1./255,
     validation_split=0.2,
@@ -30,7 +30,7 @@ val_data = train_datagen.flow_from_directory(
     subset='validation'
 )
 
-# 🔥 CNN MODEL
+
 model = models.Sequential([
     layers.Conv2D(32,(3,3),activation='relu', input_shape=(150,150,3)),
     layers.MaxPooling2D(2,2),
@@ -52,12 +52,12 @@ model.compile(
     metrics=['accuracy']
 )
 
-# 🚀 TRAIN
+
 history = model.fit(
     train_data,
     validation_data=val_data,
     epochs=10
 )
 
-# 💾 SAVE MODEL
+
 model.save("../models/helmet_model.h5")
